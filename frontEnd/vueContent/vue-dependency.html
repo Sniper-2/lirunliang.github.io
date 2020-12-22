@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue的依赖收集 | 达拉然</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    
+    <meta name="description" content="Just for fun">
+    <link rel="preload" href="/assets/css/0.styles.ff14937a.css" as="style"><link rel="preload" href="/assets/js/app.36d1b940.js" as="script"><link rel="preload" href="/assets/js/2.8eaf4498.js" as="script"><link rel="preload" href="/assets/js/22.a2251e82.js" as="script"><link rel="prefetch" href="/assets/js/10.fa011876.js"><link rel="prefetch" href="/assets/js/11.724fe980.js"><link rel="prefetch" href="/assets/js/12.11c095c8.js"><link rel="prefetch" href="/assets/js/13.e0161bb1.js"><link rel="prefetch" href="/assets/js/14.0fdad42f.js"><link rel="prefetch" href="/assets/js/15.1dd4a021.js"><link rel="prefetch" href="/assets/js/16.1884f3af.js"><link rel="prefetch" href="/assets/js/17.cf277049.js"><link rel="prefetch" href="/assets/js/18.76b76473.js"><link rel="prefetch" href="/assets/js/19.b3a9a22f.js"><link rel="prefetch" href="/assets/js/20.e19f4752.js"><link rel="prefetch" href="/assets/js/21.422bbde8.js"><link rel="prefetch" href="/assets/js/23.4a62e6f5.js"><link rel="prefetch" href="/assets/js/24.80eed555.js"><link rel="prefetch" href="/assets/js/25.1c89898d.js"><link rel="prefetch" href="/assets/js/26.416e7405.js"><link rel="prefetch" href="/assets/js/3.53e66201.js"><link rel="prefetch" href="/assets/js/4.d3886875.js"><link rel="prefetch" href="/assets/js/5.10285246.js"><link rel="prefetch" href="/assets/js/6.a2ba7df2.js"><link rel="prefetch" href="/assets/js/7.c8be4e3f.js"><link rel="prefetch" href="/assets/js/8.341e8134.js"><link rel="prefetch" href="/assets/js/9.d940e987.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ff14937a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">达拉然</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/frontEnd/" class="nav-link router-link-active">
+  前端技术
+</a></div><div class="nav-item"><a href="/whimsy/" class="nav-link">
+  奇思妙想
+</a></div><div class="nav-item"><a href="/littleStory/" class="nav-link">
+  小事情
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/frontEnd/" class="nav-link router-link-active">
+  前端技术
+</a></div><div class="nav-item"><a href="/whimsy/" class="nav-link">
+  奇思妙想
+</a></div><div class="nav-item"><a href="/littleStory/" class="nav-link">
+  小事情
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>日常开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontEnd/vueContent/vue-basic-principle.html" class="sidebar-link">Vue响应式原理</a></li><li><a href="/frontEnd/vueContent/vue-dependency.html" class="active sidebar-link">Vue的依赖收集</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>API接口</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="vue的依赖收集"><a href="#vue的依赖收集" class="header-anchor">#</a> Vue的依赖收集</h3> <h4 id="一-需要依赖收集机制的原因"><a href="#一-需要依赖收集机制的原因" class="header-anchor">#</a> 一.需要依赖收集机制的原因</h4> <ul><li>Vue是一个实现数据驱动视图的框架，vue初始化的时候会通过Observer对实例上的data选项进行遍历并通过<code>Object.defineProperty</code>设置<code>getter/setter</code>之后，当一个数据变更时，视图就进行刷新，而且用到这个数据的其他地方也会同步变更；<br> <strong>但是这样就会有一个问题，未在视图中进行绑定的变量，在其发生变化之后，也会触发<code>setter</code>从而去更新虚拟树并替换到真实DOM树上面，会影响到性能，所以就需要知道某一个属性有没有被使用，而去收集这些已经被视图使用的属性的行为，就叫做依赖收集。</strong></li></ul> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token comment">&lt;!-- test3未被使用，当test3更新的时候，实际上是不需要更新视图的 --&gt;</span>
+<span class="token comment">&lt;!-- 需要搜集的是test1跟test2 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>test1: {{test1}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>test2: {{test2}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'demo'</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        test1<span class="token operator">:</span> <span class="token string">'test1'</span><span class="token punctuation">,</span>
+        test2<span class="token operator">:</span> <span class="token string">'test2'</span><span class="token punctuation">,</span>
+        test3<span class="token operator">:</span> <span class="token string">'test3'</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><h4 id="二-vue是如何收集依赖的"><a href="#二-vue是如何收集依赖的" class="header-anchor">#</a> 二.Vue是如何收集依赖的</h4> <ul><li><p>遍历dom节点，找到正则匹配的<code>{{}}</code>所在节点，执行<code>$watch</code>方法。</p> <ul><li><p><code>$watch</code>方法传入两个参数：</p> <ul><li>绑定的数据路径(如<code>modelData.userName</code>);</li> <li>回调函数(包含了对应的节点信息)</li></ul></li> <li><p><code>$watch</code>方法的实现:</p> <ul><li>生成一个<code>Watcher</code>实例，用于收集依赖。</li> <li>然后就把<code>Watcher</code>实例放入全局<code>target</code>。</li></ul></li></ul></li> <li><p>访问<code>object</code>数据，从而触发<code>get</code>方法。</p> <ul><li><code>get</code>方法里判断有全局的<code>target</code>，执行<code>Dep</code>实例的<code>addDepend</code>方法。</li> <li><code>addDepend</code>方法内容：全局<code>target</code>也就是<code>Watcher</code>实例执行<code>addDep</code>方法。</li> <li><code>addDep</code>方法内容：把<code>Watcher</code>实例放入<code>Dep</code>实例的数组中。</li></ul></li> <li><p>完成依赖收集</p></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">11/16/2020, 11:14:57 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/frontEnd/vueContent/vue-basic-principle.html" class="prev">
+        Vue响应式原理
+      </a></span> <span class="next"><a href="/frontEnd/reactContent/test1.html">
+        /frontEnd/reactContent/test1.html
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.36d1b940.js" defer></script><script src="/assets/js/2.8eaf4498.js" defer></script><script src="/assets/js/22.a2251e82.js" defer></script>
+  </body>
+</html>

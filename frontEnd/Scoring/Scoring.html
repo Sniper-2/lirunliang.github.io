@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>H5 移动端-打分页面接口 | 达拉然</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    
+    <meta name="description" content="Just for fun">
+    <link rel="preload" href="/assets/css/0.styles.ff14937a.css" as="style"><link rel="preload" href="/assets/js/app.36d1b940.js" as="script"><link rel="preload" href="/assets/js/2.8eaf4498.js" as="script"><link rel="preload" href="/assets/js/7.c8be4e3f.js" as="script"><link rel="prefetch" href="/assets/js/10.fa011876.js"><link rel="prefetch" href="/assets/js/11.724fe980.js"><link rel="prefetch" href="/assets/js/12.11c095c8.js"><link rel="prefetch" href="/assets/js/13.e0161bb1.js"><link rel="prefetch" href="/assets/js/14.0fdad42f.js"><link rel="prefetch" href="/assets/js/15.1dd4a021.js"><link rel="prefetch" href="/assets/js/16.1884f3af.js"><link rel="prefetch" href="/assets/js/17.cf277049.js"><link rel="prefetch" href="/assets/js/18.76b76473.js"><link rel="prefetch" href="/assets/js/19.b3a9a22f.js"><link rel="prefetch" href="/assets/js/20.e19f4752.js"><link rel="prefetch" href="/assets/js/21.422bbde8.js"><link rel="prefetch" href="/assets/js/22.a2251e82.js"><link rel="prefetch" href="/assets/js/23.4a62e6f5.js"><link rel="prefetch" href="/assets/js/24.80eed555.js"><link rel="prefetch" href="/assets/js/25.1c89898d.js"><link rel="prefetch" href="/assets/js/26.416e7405.js"><link rel="prefetch" href="/assets/js/3.53e66201.js"><link rel="prefetch" href="/assets/js/4.d3886875.js"><link rel="prefetch" href="/assets/js/5.10285246.js"><link rel="prefetch" href="/assets/js/6.a2ba7df2.js"><link rel="prefetch" href="/assets/js/8.341e8134.js"><link rel="prefetch" href="/assets/js/9.d940e987.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ff14937a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">达拉然</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/frontEnd/" class="nav-link router-link-active">
+  前端技术
+</a></div><div class="nav-item"><a href="/whimsy/" class="nav-link">
+  奇思妙想
+</a></div><div class="nav-item"><a href="/littleStory/" class="nav-link">
+  小事情
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/frontEnd/" class="nav-link router-link-active">
+  前端技术
+</a></div><div class="nav-item"><a href="/whimsy/" class="nav-link">
+  奇思妙想
+</a></div><div class="nav-item"><a href="/littleStory/" class="nav-link">
+  小事情
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>日常开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>API接口</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontEnd/Scoring/Scoring.html" class="active sidebar-link">H5 移动端-打分页面接口</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/frontEnd/Community/Community.html" class="sidebar-link">H5 移动端-社区页面接口</a></li><li><a href="/frontEnd/HomePage/HomePage.html" class="sidebar-link">H5 移动端-首页页面接口</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="h5-移动端-打分页面接口"><a href="#h5-移动端-打分页面接口" class="header-anchor">#</a> H5 移动端-打分页面接口</h3> <h4 id="_1-0-名词解释"><a href="#_1-0-名词解释" class="header-anchor">#</a> <strong>1.0 名词解释</strong></h4> <ul><li><strong>动态 - 指的是其他用户所提交的给大家进行评分的动态；</strong></li> <li><strong>用户 - 指的是当前授权登录的用户</strong></li></ul> <p><img src="/assets/img/info-img2.76e56da7.jpg" alt="An image"></p> <h4 id="_2-0-获取主播动态列表的接口"><a href="#_2-0-获取主播动态列表的接口" class="header-anchor">#</a> 2.0 获取主播动态列表的接口</h4> <ul><li><p><strong>目前已知参数</strong></p> <ul><li><strong>1. 动态发布者身份类型</strong>
+可选值: 全部 - 用户 - 主播</li> <li><strong>2. 动态发布者性别</strong>
+可选值: 全部 - 男生 - 女生</li> <li><strong>3. 动态类型</strong>
+可选值： 照片 - 视频</li> <li><strong>4. 动态 ID</strong>
+可选值： 置空 - 传动态 ID
+说明： 这个字段是为了用户在浏览某条动态的同时将该动态分享出去，<br>
+通过分享出去的地址打开能够直接看到动态，
+如果携带了动态 ID，请将该动态放在返回的数据列表的第一位，其他数据正常获取</li> <li><strong>5.获取条数</strong></li> <li><strong>6.第几页</strong></li></ul></li> <li><p><strong>目前已知需要接口返回的字段</strong></p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;动态的ID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;动态的分数&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;动态的类型&quot;</span><span class="token operator">:</span> <span class="token string">&quot;如： 视频&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;动态的内容&quot;</span><span class="token operator">:</span> <span class="token string">&quot;如： 视频&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;动态发布者的头像&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;动态发布者的年龄&quot;</span><span class="token operator">:</span> <span class="token string">&quot;如： 24&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;动态发布者所在城市&quot;</span><span class="token operator">:</span> <span class="token string">&quot;如： 广州市&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;动态发布者所在区域&quot;</span><span class="token operator">:</span> <span class="token string">&quot;如： 天河区&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;动态发布者的星座&quot;</span><span class="token operator">:</span> <span class="token string">&quot;如： 双子座&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;动态发布者距离当前登录的用户的距离&quot;</span><span class="token operator">:</span> <span class="token string">&quot;单位km&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;对该动态评分过的用户列表&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;评分者的昵称&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;评分者的头像&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;评分者的评分数值&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;当前登录的用户是否对该动态点过赞&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;当前登录的用户是否已经对该动态进行过评分&quot;</span><span class="token operator">:</span> <span class="token string">&quot;这个也可以单独抽离出一个接口&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;当前登录的用户对该动态的评分数值&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div></li></ul> <h4 id="_3-0-获取某条动态的评论"><a href="#_3-0-获取某条动态的评论" class="header-anchor">#</a> 3.0 获取某条动态的评论</h4> <ul><li><p><strong>目前已知参数</strong></p> <ul><li><strong>1 动态 ID</strong></li> <li><strong>2 每一页的获取条数</strong></li> <li><strong>3 当前第几页</strong></li></ul></li> <li><p><strong>目前已知需要接口返回的字段</strong></p></li></ul> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;动态的ID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;评论的ID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;评论内容&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;评论者昵称&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;评论者头像&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;评论发布时间&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;该评论被点赞的数量&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;当前评论是否为动态的发布者&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;当前登录的用户是否对该评论点过赞&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;该评论的回复列表&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;回复ID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;回复者昵称&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;回复者头像&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;回复者是否为动态发布者&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div><h4 id="_4-0-对某条动态进行评论"><a href="#_4-0-对某条动态进行评论" class="header-anchor">#</a> 4.0 对某条动态进行评论</h4> <h4 id="_5-0-对某条动态进行点赞"><a href="#_5-0-对某条动态进行点赞" class="header-anchor">#</a> 5.0 对某条动态进行点赞</h4> <h4 id="_6-0-对某条动态取消点赞"><a href="#_6-0-对某条动态取消点赞" class="header-anchor">#</a> 6.0 对某条动态取消点赞</h4> <h4 id="_7-0-对某条动态的某条评论进行点赞"><a href="#_7-0-对某条动态的某条评论进行点赞" class="header-anchor">#</a> 7.0 对某条动态的某条评论进行点赞</h4> <h4 id="_8-0-对某条动态的某条评论取消点赞"><a href="#_8-0-对某条动态的某条评论取消点赞" class="header-anchor">#</a> 8.0 对某条动态的某条评论取消点赞</h4> <h4 id="_9-0-对某条动态进行评分"><a href="#_9-0-对某条动态进行评分" class="header-anchor">#</a> 9.0 对某条动态进行评分</h4> <h4 id="_10-0-保存某条动态的图片-视频"><a href="#_10-0-保存某条动态的图片-视频" class="header-anchor">#</a> 10.0 保存某条动态的图片/视频</h4></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">10/21/2019, 11:30:14 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/frontEnd/reactContent/test1.html" class="prev">
+        /frontEnd/reactContent/test1.html
+      </a></span> <span class="next"><a href="/frontEnd/Community/Community.html">
+        H5 移动端-社区页面接口
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.36d1b940.js" defer></script><script src="/assets/js/2.8eaf4498.js" defer></script><script src="/assets/js/7.c8be4e3f.js" defer></script>
+  </body>
+</html>

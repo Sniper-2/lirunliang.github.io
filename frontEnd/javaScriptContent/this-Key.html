@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>this关键字的指向问题 | 达拉然</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    
+    <meta name="description" content="Just for fun">
+    <link rel="preload" href="/assets/css/0.styles.ff14937a.css" as="style"><link rel="preload" href="/assets/js/app.36d1b940.js" as="script"><link rel="preload" href="/assets/js/2.8eaf4498.js" as="script"><link rel="preload" href="/assets/js/6.a2ba7df2.js" as="script"><link rel="prefetch" href="/assets/js/10.fa011876.js"><link rel="prefetch" href="/assets/js/11.724fe980.js"><link rel="prefetch" href="/assets/js/12.11c095c8.js"><link rel="prefetch" href="/assets/js/13.e0161bb1.js"><link rel="prefetch" href="/assets/js/14.0fdad42f.js"><link rel="prefetch" href="/assets/js/15.1dd4a021.js"><link rel="prefetch" href="/assets/js/16.1884f3af.js"><link rel="prefetch" href="/assets/js/17.cf277049.js"><link rel="prefetch" href="/assets/js/18.76b76473.js"><link rel="prefetch" href="/assets/js/19.b3a9a22f.js"><link rel="prefetch" href="/assets/js/20.e19f4752.js"><link rel="prefetch" href="/assets/js/21.422bbde8.js"><link rel="prefetch" href="/assets/js/22.a2251e82.js"><link rel="prefetch" href="/assets/js/23.4a62e6f5.js"><link rel="prefetch" href="/assets/js/24.80eed555.js"><link rel="prefetch" href="/assets/js/25.1c89898d.js"><link rel="prefetch" href="/assets/js/26.416e7405.js"><link rel="prefetch" href="/assets/js/3.53e66201.js"><link rel="prefetch" href="/assets/js/4.d3886875.js"><link rel="prefetch" href="/assets/js/5.10285246.js"><link rel="prefetch" href="/assets/js/7.c8be4e3f.js"><link rel="prefetch" href="/assets/js/8.341e8134.js"><link rel="prefetch" href="/assets/js/9.d940e987.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ff14937a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">达拉然</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/frontEnd/" class="nav-link router-link-active">
+  前端技术
+</a></div><div class="nav-item"><a href="/whimsy/" class="nav-link">
+  奇思妙想
+</a></div><div class="nav-item"><a href="/littleStory/" class="nav-link">
+  小事情
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/frontEnd/" class="nav-link router-link-active">
+  前端技术
+</a></div><div class="nav-item"><a href="/whimsy/" class="nav-link">
+  奇思妙想
+</a></div><div class="nav-item"><a href="/littleStory/" class="nav-link">
+  小事情
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>日常开发</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontEnd/javaScriptContent/js-Skill.html" class="sidebar-link">JS日常开发常用短代码</a></li><li><a href="/frontEnd/javaScriptContent/this-Key.html" class="active sidebar-link">this关键字的指向问题</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/frontEnd/javaScriptContent/event-Loop.html" class="sidebar-link">JS事件循环（浏览器方面）</a></li><li><a href="/frontEnd/javaScriptContent/data-Type.html" class="sidebar-link">包装类型跟基本数据类型</a></li><li><a href="/frontEnd/javaScriptContent/designpattern-singleCase.html" class="sidebar-link">前端设计模式 - 单例模式</a></li><li><a href="/frontEnd/javaScriptContent/fe-debounce-throttle.html" class="sidebar-link">前端节流与防抖</a></li><li><a href="/frontEnd/javaScriptContent/es6-modular.html" class="sidebar-link">ES6模块化语法</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>API接口</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="this关键字的指向问题"><a href="#this关键字的指向问题" class="header-anchor">#</a> this关键字的指向问题</h3> <p>跟其他语言相比，this关键字在JS中的表现有所不同，是否是严格模式也会影响this的绑定，在绝大多数情况下，函数的调用方式决定了this的值。this不能在执行期间被赋值，并且在每次函数被调用时this的值也可能会不同。</p> <h3 id="_1-js的引用类型"><a href="#_1-js的引用类型" class="header-anchor">#</a> 1.JS的引用类型</h3> <p>为什么有this这个关键字呢，首先要知道JS的引用数据类型；</p> <p>JS的引用类型有<code>Object</code>、<code>Array</code>、<code>Function</code>等Object type的数据；</p> <p>引用类型声明之后，是保存在堆内存之中的，由于JS不可以直接访问堆内存空间中的位置和操作堆内存空间，所以每当我们声明一个引用类型的数据的时候，实际上是将该数据在堆中的地址(所谓的指针)保存到栈中，再将栈中的地址指向引用数据类型的变量名，所以我们每次调用一个对象、数组、函数等引用类型的数据时，实际上是先查找该数据在栈中的位置，再去堆中拿到对应的数据结构内容，再执行；</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> dataObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'李润亮'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">testFun</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面的代码在内存中，实际上是这样的：</p> <p><img src="/assets/img/1.be946032.png" alt="An image"></p> <h3 id="_2-this的指向"><a href="#_2-this的指向" class="header-anchor">#</a> 2.this的指向</h3> <p>知道引用类型的存储方式之后，就能够更加容易理解this的指向的问题了；</p> <h4 id="第一个例子"><a href="#第一个例子" class="header-anchor">#</a> <strong>第一个例子</strong></h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> test1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'李润亮'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">testFun</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'姓名：'</span><span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> test2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'李润亮人造人二号'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+test2<span class="token punctuation">.</span>testFun <span class="token operator">=</span> test1<span class="token punctuation">.</span>testFun<span class="token punctuation">;</span>
+test2<span class="token punctuation">.</span><span class="token function">testFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 姓名：李润亮人造人二号</span>
+</code></pre></div><p>结果显而易见，我们学了JS之后这种简单的引用关系基本上一眼就能看出来，但是最主要的还是要知道内存里面是如何对上面的对象结构进行存储跟引用的<br>
+上面的例子实际上就是声明了一个函数之后，会在栈生成一个该函数存放在堆里面的引用地址，然后把引用地址赋值给<code>testFun</code>这个变量<br>
+最后自动绑定<code>testFun</code>指向的<code>this</code>
+重构一下:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> test1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'李润亮'</span><span class="token punctuation">,</span>
+  testFun<span class="token operator">:</span> f      <span class="token comment">// 函数在栈内存中的引用地址</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// f 为引用地址 ，函数存在堆内存中</span>
+<span class="token keyword">function</span> <span class="token function">f</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'姓名：'</span><span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> test2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'李润亮人造人二号'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">/**
+ * 因为在 test1 里面的 testFun 属性实际上是存储了 f 函数的引用地址；
+ * 现在把引用地址告诉 test2.testFun ，
+ * 然后 test2.testFun 跟 test1.testFun 都指向了存放在栈中的 f 函数引用地址
+ */</span>
+test2<span class="token punctuation">.</span>testFun <span class="token operator">=</span> test1<span class="token punctuation">.</span>testFun<span class="token punctuation">;</span>    
+</code></pre></div><p>在内存中，指向是这样的：
+<img src="/assets/img/test2.ad4e5e20.png" alt="An image"></p> <h3 id="_3-this的使用场合"><a href="#_3-this的使用场合" class="header-anchor">#</a> 3.this的使用场合</h3> <p><strong>this有三种使用场景</strong></p> <ul><li><p>全局环境<br> <strong>全局环境使用this，它指的就是顶层对象window.</strong></p></li> <li><p>构造函数<br> <strong>构造函数中的this，指的是实例对象</strong></p> <p>我们知道构造函数最后都是返回一个实例对象，所以在构造函数内部的this实际是指的是这个返回回去的实例对象；</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function-variable function">Obj</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">test</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">=</span> test
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> myObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Obj</span><span class="token punctuation">(</span><span class="token string">'李润亮'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myObj<span class="token punctuation">.</span>a <span class="token comment">// -&gt; 李润亮</span>
+</code></pre></div><p><code>new</code>的时候实际上跟<code>this</code>的指向也是息息相关；<br>
+我们在执行<code>new</code>关键字的时候，内部是需要经过5个步骤，最后才返回实例对象的:</p> <ul><li><strong>1.创建一个空对象，作为将要返回的对象实例</strong></li> <li><strong>2.将这个空对象的原型，指向构造函数的<code>prototype</code>属性，形成一条完整的原型链</strong></li> <li><strong>3.将函数内部的this指向这个空对象</strong></li> <li><strong>4.开始执行构造函数内部的代码</strong></li> <li><strong>5.返回这个对象或者构造函数返回的对象</strong></li></ul> <p>上面的代码我们看用重构为:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// </span>
+<span class="token comment">/**
+ * new关键字代码逻辑
+ * constructor 构造函数
+ * params      实例化构造函数传的参数
+ */</span>
+<span class="token keyword">function</span> <span class="token keyword">new</span> <span class="token punctuation">(</span><span class="token parameter">constructor<span class="token punctuation">,</span> params</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 拿到构造函数跟实例化的参数</span>
+  <span class="token keyword">let</span> args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 取出构造函数</span>
+  <span class="token keyword">let</span> constructor <span class="token operator">=</span> args<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 创建一个空对象，继承构造函数的 prototype 属性，形成完整的原型链</span>
+  <span class="token keyword">let</span> context <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>constructor<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 执行构造函数，构造函数内部的this指向我们创建出来的空对象</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token function">constructor</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 返回，如果我们本身的构造函数已经返回了一个对象，那么就执行构造函数的返回，否则返回我创建的对象</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> result <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> result <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">?</span> result <span class="token operator">:</span> context<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">// 进行实例化</span>
+<span class="token keyword">function</span> <span class="token function-variable function">Obj</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">test</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">=</span> test
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> myObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Obj</span><span class="token punctuation">(</span><span class="token string">'李润亮'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myObj<span class="token punctuation">.</span>a <span class="token comment">// -&gt; 李润亮</span>
+
+<span class="token comment">// ----- ↓↓↓↓↓ new的时候执行new方法，变成了 ↓↓↓↓ -----</span>
+<span class="token keyword">new</span><span class="token punctuation">(</span>Obj<span class="token punctuation">,</span> <span class="token string">'李润亮'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// args = [Obj, '李润亮']</span>
+  <span class="token keyword">let</span> args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// constructor == Obj</span>
+  <span class="token keyword">let</span> constructor <span class="token operator">=</span> args<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
+        
+  <span class="token comment">// context = {}   context.prototype === Obj.prototype</span>
+  <span class="token keyword">let</span> context <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>constructor<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * 执行构造函数
+   * 等于 Obj(args).bind(context)
+   * Obj内部的this == context
+   * 所以Obj代码执行 this.a = test 等于 context.a = test
+   * 而test等于我们传进去的&quot;李润亮&quot;, 所以 context.a = &quot;李润亮&quot;
+   */</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token function">constructor</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 因为我们的构造函数Obj没有返回一个对象，所以我们把context返回回去</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> result <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> result <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">?</span> result <span class="token operator">:</span> context<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>实际上这也涉及到引用数据类型在内存中存储的知识</strong><br> <strong>我们在上面有一段代码，绑定构造函数的this指向</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token function">constructor</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>实际上我们在创建<code>context</code>的时候已经在栈中生成了一个指向该对象在堆中地址的引用地址<br>
+构造函数内部也的<code>this</code>也绑定了这个引用地址，所以我们在构造函数内部修改该引用地址的对象的属性后
+在new函数里面的<code>context</code>也会一起更改,因为他们指向了同一个引用地址</p></li> <li><p>对象的方法
+<strong>对象里面的方法的this的指向就是方法运行时所在的对象。该方法赋值给另一个对象，就会改变this的指向。</strong> <strong>举个例子</strong></p> <ul><li>第一个</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> obj <span class="token operator">=</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">foo</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span>obj<span class="token punctuation">.</span>foo <span class="token operator">=</span> obj<span class="token punctuation">.</span>foo<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; window</span>
+</code></pre></div><p><strong>一步一步解析</strong> <strong>重构上面的例子</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span><span class="token punctuation">{</span>
+  foo<span class="token operator">:</span> foo
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 输出obj.foo，会得到一个函数(而不是foo函数的执行结果)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>foo<span class="token punctuation">)</span> <span class="token comment">// function () { console.log(this); }</span>
+
+<span class="token comment">// 那么 (obj.foo = obj.foo)() 就等于</span>
+<span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 因为()()是一个自执行的函数，会回去执行第一个括号里面的代码并得出返回值，那么</span>
+<span class="token comment">// (obj.foo = function () {  console.log(this) )() 继续执行第二🙅步，等于</span>
+<span class="token punctuation">(</span>obj<span class="token punctuation">.</span>foo<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 然后我们在刚开始已经输出过obj.foo的值，这个值等于 function () { console.log(this); }</span>
+<span class="token comment">// 对象把方法点出来而不执行，上面的代码等于</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 最后生成了一个自执行函数</span>
+<span class="token comment">// 并且我们知道 对象里面的方法的this的指向就是方法运行时所在的对象</span>
+<span class="token comment">// 所以上面的代码的this是指向顶层对象，就是window</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 所以</span>
+<span class="token punctuation">(</span>obj<span class="token punctuation">.</span>foo <span class="token operator">=</span> obj<span class="token punctuation">.</span>foo<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// -&gt; window</span>
+</code></pre></div><h3 id="_4-this在对象方法中使用的作用域"><a href="#_4-this在对象方法中使用的作用域" class="header-anchor">#</a> 4.this在对象方法中使用的作用域</h3> <p><strong>当this所在的方法不在对象的第一层，这时this只是指向当前一层的对象，而不会继承更上面的层。</strong></p> <h5 id="例子"><a href="#例子" class="header-anchor">#</a> 例子</h5> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> test <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'李润亮'</span><span class="token punctuation">,</span>
+  action<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">actionA</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+test<span class="token punctuation">.</span>action<span class="token punctuation">.</span><span class="token function">actionA</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// undefined</span>
+</code></pre></div><p>这个也是涉及到引用引用类型的数据再内存储的问题；<br>
+上面的代码实际上是这样的：</p> <div class="language-js extra-class"><pre class="language-js"><code>  <span class="token keyword">let</span> test <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'李润亮'</span><span class="token punctuation">,</span>
+    action<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">actionA</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> action <span class="token operator">=</span> <span class="token punctuation">{</span>
+    actionA<span class="token operator">:</span> actionA
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">function</span> <span class="token function">actionA</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p><strong>在<code>action</code>对象声明的时候会把<code>actionA</code>的引用地址赋值给<code>action.actionA</code></strong><br> <strong>之后在<code>action</code>对象调用<code>action.actionA</code>的时候会自动把action当成this绑定给<code>actionA</code>函数</strong><br> <strong>而<code>action</code>对象里面并没有<code>name</code>属性，所以是<code>undefined</code></strong></p></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">7/31/2020, 11:40:25 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/frontEnd/javaScriptContent/js-Skill.html" class="prev">
+        JS日常开发常用短代码
+      </a></span> <span class="next"><a href="/frontEnd/javaScriptContent/event-Loop.html">
+        JS事件循环（浏览器方面）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.36d1b940.js" defer></script><script src="/assets/js/2.8eaf4498.js" defer></script><script src="/assets/js/6.a2ba7df2.js" defer></script>
+  </body>
+</html>

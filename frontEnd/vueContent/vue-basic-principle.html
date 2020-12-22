@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue响应式原理 | 达拉然</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    
+    <meta name="description" content="Just for fun">
+    <link rel="preload" href="/assets/css/0.styles.ff14937a.css" as="style"><link rel="preload" href="/assets/js/app.36d1b940.js" as="script"><link rel="preload" href="/assets/js/2.8eaf4498.js" as="script"><link rel="preload" href="/assets/js/21.422bbde8.js" as="script"><link rel="prefetch" href="/assets/js/10.fa011876.js"><link rel="prefetch" href="/assets/js/11.724fe980.js"><link rel="prefetch" href="/assets/js/12.11c095c8.js"><link rel="prefetch" href="/assets/js/13.e0161bb1.js"><link rel="prefetch" href="/assets/js/14.0fdad42f.js"><link rel="prefetch" href="/assets/js/15.1dd4a021.js"><link rel="prefetch" href="/assets/js/16.1884f3af.js"><link rel="prefetch" href="/assets/js/17.cf277049.js"><link rel="prefetch" href="/assets/js/18.76b76473.js"><link rel="prefetch" href="/assets/js/19.b3a9a22f.js"><link rel="prefetch" href="/assets/js/20.e19f4752.js"><link rel="prefetch" href="/assets/js/22.a2251e82.js"><link rel="prefetch" href="/assets/js/23.4a62e6f5.js"><link rel="prefetch" href="/assets/js/24.80eed555.js"><link rel="prefetch" href="/assets/js/25.1c89898d.js"><link rel="prefetch" href="/assets/js/26.416e7405.js"><link rel="prefetch" href="/assets/js/3.53e66201.js"><link rel="prefetch" href="/assets/js/4.d3886875.js"><link rel="prefetch" href="/assets/js/5.10285246.js"><link rel="prefetch" href="/assets/js/6.a2ba7df2.js"><link rel="prefetch" href="/assets/js/7.c8be4e3f.js"><link rel="prefetch" href="/assets/js/8.341e8134.js"><link rel="prefetch" href="/assets/js/9.d940e987.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ff14937a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">达拉然</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/frontEnd/" class="nav-link router-link-active">
+  前端技术
+</a></div><div class="nav-item"><a href="/whimsy/" class="nav-link">
+  奇思妙想
+</a></div><div class="nav-item"><a href="/littleStory/" class="nav-link">
+  小事情
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/frontEnd/" class="nav-link router-link-active">
+  前端技术
+</a></div><div class="nav-item"><a href="/whimsy/" class="nav-link">
+  奇思妙想
+</a></div><div class="nav-item"><a href="/littleStory/" class="nav-link">
+  小事情
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>日常开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontEnd/vueContent/vue-basic-principle.html" class="active sidebar-link">Vue响应式原理</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/frontEnd/vueContent/vue-dependency.html" class="sidebar-link">Vue的依赖收集</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>API接口</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="vue响应式原理"><a href="#vue响应式原理" class="header-anchor">#</a> Vue响应式原理</h3> <h4 id="一-响应式（双向绑定）基本原理"><a href="#一-响应式（双向绑定）基本原理" class="header-anchor">#</a> 一.响应式（双向绑定）基本原理</h4> <ul><li><p>Vue通过对象原型链上的原生方法<code>defineProperty</code>或<code>Proxy</code>对象进行数据劫持，在我们访问或者修改某个对象的某个属性的时候，通过一段代码进行拦截，然后进行额外的操作</p></li> <li><p>比如我们更新Vue实例里面的data的某个属性时，就会触发<code>defineProperty</code>里面的<code>set</code>方法或<code>Proxy</code>对象里面的<code>set</code>方法，那么我们就可以在这个方法里面进行虚拟DOM树的更新以及HTML界面真实DOM的树的替换，实现了基本的双向绑定了;</p></li> <li><p><code>Object.defineProperty</code>或<code>Proxy</code>都是需要人为手动去进行getter/setter，为Vue实例里面data选项里面每个属性接入vue实现的代理中间层，以实现双向绑定；</p></li> <li><p>每个组件实例都对应一个 watcher 实例，它会在组件渲染的过程中把“接触”过的数据 property 记录为依赖。之后当依赖项的 setter 触发时，会通知 watcher，从而使它关联的组件重新渲染。</p></li></ul> <h4 id="二-vue的观察者（监听器）observer"><a href="#二-vue的观察者（监听器）observer" class="header-anchor">#</a> 二.vue的观察者（监听器）Observer</h4> <ul><li><p>vue的Observer类会对vue实例上面的data对象<code>（walk方法）</code>进行递归遍历，包括子属性对象的属性，利用 Object.defineProperty() 进行数据劫持，对属性都加上 setter 和 getter。这样的话，给这个对象的某个值赋值或改变值，就会触发 setter，那么就能监听到了数据变化。</p></li> <li><p>observer对一个data选项里面某个属性或对象进行数据劫持之后会绑定在其ob属性上，防止重复绑定</p></li> <li><p>如果data选项上面的数据有多层嵌套，那么在Observer进行初始化数据劫持会递归多层，一次性的计算量较大；</p></li> <li><p>无法监听动态新增的属性/删除属性，需要调用Vue.set或Vue.delete或对这个对象进行拷贝，将更新后的新的指针地址指向这个对象对应的属性上；</p></li> <li><p>无法监听数组的变化，需要特殊处理</p></li></ul> <h4 id="三-vue对数据的双向绑定进行特殊处理"><a href="#三-vue对数据的双向绑定进行特殊处理" class="header-anchor">#</a> 三.vue对数据的双向绑定进行特殊处理</h4> <ul><li><p>Observer函数里面的<code>Object.defineProperty</code>是对vue实例里面的data对象属性进行双向绑定的，这种实现主要是针对key/value形式的对象，对数组中某个元素变化是无能为力的，所以vue对数组的原型上的操作数组的方式进行拓展；</p></li> <li><p>对数组原型链上面的方法进行是拓展并不会改变原型链上面原本的方法的，拓展的方法是先拷贝（Object.create）原型链上面的方法再进行拓展的；</p></li> <li><p>数组拓展的方法有push,pop,shift,unshift,splice,reverse,sort，这样的话，当我们调用数组的这七个方法其中一个，那么Vue就会感知到，并重新更新界面；</p></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">11/16/2020, 11:14:57 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/frontEnd/javaScriptContent/es6-modular.html" class="prev">
+        ES6模块化语法
+      </a></span> <span class="next"><a href="/frontEnd/vueContent/vue-dependency.html">
+        Vue的依赖收集
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.36d1b940.js" defer></script><script src="/assets/js/2.8eaf4498.js" defer></script><script src="/assets/js/21.422bbde8.js" defer></script>
+  </body>
+</html>
